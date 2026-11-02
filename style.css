@@ -74,6 +74,9 @@ nav a.current { font-weight: 500; opacity: 1; }
   margin: 0 auto;
   line-height: 1.45;
 }
+.banner h1.motto.long {
+  font-size: clamp(1.9rem, 4vw, 3.4rem);
+}
 .banner p {
   margin: 0.8rem 0 0;
   font-family: Merriweather, Georgia, serif;
