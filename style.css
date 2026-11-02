@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500&display=swap");
+
+:root {
+  --red: #990000;
+  --text: #212121;
+  --muted: #5f6368;
+  --rule: #e0e0e0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  background: #fff;
+}
+
+a { color: var(--red); }
+
+/* top bar */
+header {
+  background: var(--red);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem 1.5rem;
+  padding: 0.55rem 1.2rem;
+}
+.site-name {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.97rem;
+  margin-left: 1.6rem;
+  opacity: 0.92;
+}
+nav a:first-child { margin-left: 0; }
+nav a:hover { opacity: 1; text-decoration: underline; }
+nav a.current { font-weight: 500; opacity: 1; }
+
+/* banner with angled panels, as on the Google Site */
+.banner {
+  background:
+    linear-gradient(118deg, rgba(0,0,0,0) 0 72%, rgba(255,255,255,0.07) 72% 100%),
+    linear-gradient(62deg, rgba(0,0,0,0.10) 0 22%, rgba(0,0,0,0) 22% 100%),
+    linear-gradient(118deg, rgba(0,0,0,0.12) 0 18%, rgba(0,0,0,0) 18% 100%),
+    linear-gradient(90deg, #4a2a2c 0%, #5c3537 50%, #6e3b3b 100%);
+  color: #fff;
+  text-align: center;
+  padding: 5.5rem 1rem;
+}
+.banner h1 {
+  margin: 0;
+  font-family: Merriweather, Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  letter-spacing: 0.01em;
+}
+.banner h1.motto {
+  max-width: 1100px;
+  margin: 0 auto;
+  line-height: 1.45;
+}
+.banner p {
+  margin: 0.8rem 0 0;
+  font-family: Merriweather, Georgia, serif;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+h2 {
+  font-family: Merriweather, Georgia, serif;
+  font-weight: 400;
+  font-size: 1.45rem;
+  color: var(--text);
+  margin: 2.4rem 0 0.8rem;
+}
+
+/* home page intro: photo left, text right */
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 464px) 1fr;
+  gap: 2.4rem;
+  align-items: start;
+}
+.intro img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.name-block {
+  text-align: center;
+  font-family: Merriweather, Georgia, serif;
+  margin: 0.6rem 0 2rem;
+}
+.name-block .name { font-size: 1.9rem; margin: 0; }
+.name-block .rank { font-size: 1.15rem; margin: 0.2rem 0 0; }
+.name-block .uni { font-size: 1.15rem; color: var(--red); margin: 0.2rem 0 0; }
+
+ul { padding-left: 1.3rem; }
+ul li { margin: 0.45rem 0; }
+ul li::marker { font-size: 0.8em; }
+
+ol.pubs { padding-left: 2.4rem; }
+ol.pubs li { margin: 0.6rem 0; padding-left: 0.3rem; }
+.journal { font-style: italic; }
+.note { color: var(--muted); font-size: 0.93rem; }
+
+dl.timeline {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  gap: 0.45rem 1.2rem;
+  margin: 0;
+}
+dl.timeline dt { color: var(--muted); }
+dl.timeline dd { margin: 0; }
+
+ul.talks li { margin: 0.6rem 0; }
+.talk { display: block; color: var(--muted); }
+
+.contact {
+  margin-top: 3rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  color: var(--muted);
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 0 1rem 2rem;
+}
+
+@media (max-width: 760px) {
+  .intro { grid-template-columns: 1fr; gap: 1rem; }
+  .banner { padding: 3.2rem 1rem; }
+  nav a { margin-left: 0; margin-right: 1.1rem; }
+  dl.timeline { grid-template-columns: 1fr; gap: 0; }
+  dl.timeline dd { margin-bottom: 0.7rem; }
+}
